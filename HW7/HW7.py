@@ -59,40 +59,65 @@ def fac(n):
 #         b = int(input())
 #         print(a/b)
 
-def ris_board(board):
-    print('-------------')
-    for i in board:
-        print('|',"|".join(i), '|')
-        print('-------------')
-def win(board, person):
-    for i in range (3):
-        if all (board[i][j] == person for j in range(3)) or all(board[j][i] == person for j in range(3)):
-            return True
-        if all (board[i][i] == person for i in range(3)) or all(board[i][2-i] == person for i in range(3)):
-            return True
-    return False
-def full(board):
-    return all(all(cell!=' ' for cell in row) for row in board)
-def tictactoe(board):
-    board=[[' ' for _ in range(3)] for _ in range(3)]
-    persons=['X','O']
-    currentperson=0
-    print('********** Игра Крестики-нолики для двух игроков **********')
-    ris_board(board)
-    while True:
-        move=int(input(f'Куда поставим {persons[currentperson]}?'))-1
-        row, col =divmod(move,3)
-        if board[row][col] == ' ':
-            board[row][col]=persons[currentperson]
-            ris_board(board)
-            if win(board, persons[currentperson]):
-                print(f'{persons[currentperson]} выйграл!')
-                break
-            elif full(board):
-                print('Nichya!')
-                break
-            currentperson = 1- currentperson
-        else:
-            print('Эта ячейка занята!')
-if __name__ == '__main__':
-    tictactoe()
+# def ris_board(board):
+#     print('-------------')
+#     for i in board:
+#         print('|',"|".join(i), '|')
+#         print('-------------')
+# def win(board, person):
+#     for i in range (3):
+#         if all (board[i][j] == person for j in range(3)) or all(board[j][i] == person for j in range(3)):
+#             return True
+#         if all (board[i][i] == person for i in range(3)) or all(board[i][2-i] == person for i in range(3)):
+#             return True
+#     return False
+# def full(board):
+#     return all(all(cell!=' ' for cell in row) for row in board)
+# def tictactoe():
+#     board=[[' ' for _ in range(3)] for _ in range(3)]
+#     persons=['X','O']
+#     currentperson=0
+#     print('********** Игра Крестики-нолики для двух игроков **********')
+#     ris_board(board)
+#     while True:
+#         move=int(input(f'Куда поставим {persons[currentperson]}?'))-1
+#         row, col =divmod(move,3)
+#         if board[row][col] == ' ':
+#             board[row][col]=persons[currentperson]
+#             ris_board(board)
+#             if win(board, persons[currentperson]):
+#                 print(f'{persons[currentperson]} выйграл!')
+#                 break
+#             elif full(board):
+#                 print('Nichya!')
+#                 break
+#             currentperson = 1- currentperson
+#         else:
+#             print('Эта ячейка занята!')
+# if __name__ == '__main__':
+#     tictactoe()
+
+# from collections import Counter
+# con=['Cond1', 'Cond2', 'Cond3', 'Cond4', 'Cond5']
+# while True:
+#     vibor =input()
+#     if vibor=='stop':
+#         break
+#     else:
+#         con.append(vibor)
+# c=Counter(con)
+# winnersvote=max(c.values())
+# winners=[cand for cand, votes in c.items() if votes == winnersvote]
+# if len(winners)==1:
+#     print(winners[0])
+# else:
+#     winners.sort(key=len)
+#     print(winners[0])
+
+
+
+
+
+
+
+
